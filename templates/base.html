@@ -24,6 +24,26 @@
             <li class="nav-item">
               <a class="nav-link text-white" style="font-size: 1.1rem;" href="about.html">Recipes</a>
             </li>
+
+
+            {% if session.user %}
+                <li class="nav-item">
+                <a class="nav-link text-white" style="font-size: 1.1rem;" href="{{ url_for('login') }}">Logout</a>
+                </li>  
+                <a class="nav-link text-white" style="font-size: 1.1rem;" href="membership.html">My Recipes</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-white" style="font-size: 1.1rem;" href="{{ url_for('profile', username=session['user']) }}">User Profile</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-white" style="font-size: 1.1rem;" href="membership.html">Add Recipes</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-white" style="font-size: 1.1rem;" href="contact.html">Contact</a>
+                </li>   
+            
+            {% else %}
+                    
             <li class="nav-item">
               <a class="nav-link text-white" style="font-size: 1.1rem;" href="{{ url_for('login') }}">Login</a>
             </li>
@@ -31,17 +51,10 @@
               <a class="nav-link text-white" style="font-size: 1.1rem;" href="{{ url_for('register') }}">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" style="font-size: 1.1rem;" href="membership.html">My Recipes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" style="font-size: 1.1rem;" href="{{ url_for('profile', username=session['user']) }}">User Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" style="font-size: 1.1rem;" href="membership.html">Add Recipes</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link text-white" style="font-size: 1.1rem;" href="contact.html">Contact</a>
-            </li>           
+            </li>   
+    
+            {% endif %}
           </ul>
         </div>
     </nav>
@@ -50,7 +63,7 @@
 
 <section>
         <!-- flash messages -->
-    {% for flash_message in get_flashed_messages(register) %}
+    {% for flash_message in get_flashed_messages() %}
          <h1>{{ flash_message }}</h1>
     {% endfor %}
 </section>

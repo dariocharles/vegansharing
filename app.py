@@ -17,6 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # Get recipes?
 @app.route("/")
 @app.route("/get_recipes")
@@ -24,9 +25,32 @@ def get_recipes():
     all_recipes = mongo.db.recipes.find()
     return render_template("all_recipes.html", recipes=all_recipes)
 
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+        # return render_template("register.html")
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "email_address": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
+        return redirect(url_for("register"))
     return render_template("register.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

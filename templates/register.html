@@ -4,11 +4,13 @@
     <h3 class="center-align">Register</h3>
 
     <!-- Taken From https://bootsnipp.com/snippets/or3WG -->
+
+
     <form method="POST" action="{{ url_for('register') }}">
 <!-- Username -->
   <label>
     <p class="label-txt"><i class="fas fa-user-plus"></i>Username</p>
-    <input type="text" class="input">
+    <input id="username" name="username"  minlength="5"  maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" type="text" class="input" required>
     <div class="line-box">
       <div class="line"></div>
     </div>
@@ -16,7 +18,7 @@
 <!-- Email -->
   <label>
     <p class="label-txt"><i class="fas fa-mail"></i>/Email Address</p>
-    <input type="text" class="input">
+    <input id="email" name="email" minlength="5" maxlength="40" type="email" class="input" required>
     <div class="line-box">
       <div class="line"></div>
     </div>
@@ -24,7 +26,7 @@
 <!-- Password -->
   <label>
     <p class="label-txt"><i class="fas fa-user-lock"></i>Password</p>
-    <input type="text" class="input">
+    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="input" required>
     <div class="line-box">
       <div class="line"></div>
     </div>

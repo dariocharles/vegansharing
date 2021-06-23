@@ -51,8 +51,17 @@
   </div>   
 </header>
 
+<section>
+        <!-- flash messages -->
+    {% for flash_message in get_flashed_messages(register) %}
+         <h1>{{ flash_message }}</h1>
+    {% endfor %}
+</section>
+
+<main class="container"></main>
     {% block content %}
     {% endblock %}
+</main>
 
 <footer>
     <div id="footer" class="container-fluid bg-dark p-0">

@@ -2,6 +2,9 @@
 Planning/Organizing/ and Setting Up. 
 
 
+Code
+Register Form - https://bootsnipp.com/snippets/or3WG
+
 
 Er diagram
 Site Map

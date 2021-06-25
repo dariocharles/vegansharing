@@ -4,36 +4,64 @@
 <h3>Add Recipes</h3>
 
 <div class="row">
-    <form class="container">
+    <form class="container" method="POST" action="">
+        <div class="row">
         <!-- Image -->
-        <div class="mb-3">
-        <label for="formFile" class="form-label">Image</label>
-        <input class="form-control" type="file" id="formFile">
+            <div class="mb-3">
+            <label for="formFile" class="form-label">Image</label>
+            <input class="form-control" type="file" id="formFile">
+            </div>
         </div>
+        <!-- Category -->
+        <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="task_name" name="task_name" minlength="5" maxlength="50"
+                        type="text" class="validate" required>
+                    <label for="task_name">Task Name</label>
+                </div>
+            </div>
+        <!--  Recipe Name -->
+        <div class="row">
+            <div class="mb-3">
+            <label for="recipe_name" class="form-label">Recipe Name</label>
+            <input type="email" class="form-control" id="recipe_name" name="recipe_name" required minlength="5" maxlength="50">
+            </div>
+        </div>        
         <!-- Time -->
-        <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Time</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <div class="row">
+            <div class="mb-3">
+            <label for="time" class="form-label">Time</label>
+            <input type="email" class="form-control" id="time" name="time" required minlength="1" maxlength="3">
+            </div>
         </div>
         <!-- Description -->
-        <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <!-- Ingredients -->
+        <div class="row">
+            <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3" required minlength="20"></textarea>
+            </div>
         </div>
-        <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Ingredients</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <!-- Ingredients -->
+        <div class="row">
+            <div class="mb-3">
+            <label for="ingredients" class="form-label">Ingredients</label>
+            <textarea class="form-control" id="ingredients" name="ingredients" rows="3"></textarea>
+            </div>
         </div>
         <!-- Directions -->
-        <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Directions</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div class="row">
+            <div class="mb-3">
+            <label for="directions" class="form-label">Directions</label>
+            <textarea class="form-control" id="directions" name="directions" rows="3" required minlength="20"></textarea>
+            </div>
         </div>
         <!-- Nutritional Infrormation -->
-        <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Nutritional Information</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div class="row">
+            <div class="mb-3">
+            <label for="nutritional_info" class="form-label">Nutritional Information</label>
+            <textarea class="form-control" id="nutritional_info" name="nutritional_info" rows="3" required minlength="20"></textarea>
+            </div>
         </div>
 </form>
 </div>

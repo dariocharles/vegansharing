@@ -1,9 +1,25 @@
+Why everytimes i open is the env.py file gone?
+Why do I have to reinstall flask, flask_pymongo and dnspython everytime reopen
+
+
+
 git push origin HEAD:master --force
 
 
 
 Log out is not working!!! Try again!!!
 
+
+  <!-- {% for recipe in recipes %}
+        {{ recipe.image }}<br>
+        {{ recipe.recipe_name }}<br>
+        {{ recipe.time }}<br>
+        {{ recipe.description }}<br>
+        {{ recipe.nutritional_info }}<br>
+    {% endfor %} -->
+    <!-- <p><em>by: {{ recipe.created_by }}</em></p> -->
+    <!-- recipe.created_by references {% for RECIPE in recipes %} -->
+    
 
 
 import os

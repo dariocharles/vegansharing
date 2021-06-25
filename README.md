@@ -6,6 +6,9 @@ Code
 Register Form - https://bootsnipp.com/snippets/or3WG
 
 
+
+https://getbootstrap.com/docs/5.0/components/card/ - for the cards for recipes
+
 Er diagram
 Site Map
 WireFrame

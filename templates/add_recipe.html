@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Add Recipes</h3>
+
+<div class="row">
+    <form class="container">
+        <!-- Image -->
+        <div class="mb-3">
+        <label for="formFile" class="form-label">Image</label>
+        <input class="form-control" type="file" id="formFile">
+        </div>
+        <!-- Time -->
+        <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Time</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <!-- Description -->
+        <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <!-- Ingredients -->
+        </div>
+        <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Ingredients</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <!-- Directions -->
+        <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Directions</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <!-- Nutritional Infrormation -->
+        <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Nutritional Information</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+</form>
+</div>
+
+
+{% endblock %}

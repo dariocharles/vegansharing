@@ -3,6 +3,36 @@ Why do I have to reinstall flask, flask_pymongo and dnspython everytime reopen
 
 
 
+
+
+# -------------------
+# @app.route("/all_recipes/<recipe_name>")
+# def recipes_all(recipe_name):
+#     recipe = {
+#         "image": request.form.get("image"),
+#             "category_name": request.form.get("category_name"),
+#             "recipe_name": request.form.get("recipe_name"),
+#             "time": request.form.get("time"),
+#             "description": request.form.get("description"),
+#             "ingredients": request.form.get("ingredients"),
+#             "directions": request.form.get("directions"),
+#             "nutritional_info": request.form.get("nutritional_info"),
+#             "created_by": session["user"]
+#     }
+
+#     mongo.db.recipes.find()        
+#     return redirect(url_for("get_recipes"))
+
+#     recipes = mongo.db.categories.find().sort("recipes", 1)
+#     return render_template("all_recipes.html", recipe=recipes)
+
+
+<a href="/all_recipes/{{ recipe.recipes_all.url }}"></a> - for all_recipes recipe for URL link
+
+
+
+----------------------------------
+
 git push origin HEAD:master --force
 
 

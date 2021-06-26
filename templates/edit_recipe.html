@@ -19,58 +19,68 @@
                 <select id="category_name" name="category_name" class="validate" required>
                     <option value="AB" disables selected>Choose Meal</option>
                     {% for category in categories %}
-                    <option value="{{ category.category_name }}" required>{{ category.category_name }}</option>
+                        {% if category.catrgory_name == recipe.category_name %}
+                            <option value="{{ category.category_name }}">{{ 
+                        category.category_name }}</option>
+                        {% else %}
+                            <option value="{{ category.category_name }}" required>{{ 
+                        category.category_name }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>		
                 <labrl for="category_name">Meal</labrl>
         </div>
-        <!--  Recipe Name -->
+               <!--  Recipe Name -->
         <div class="row">
             <div class="mb-3">
             <label for="recipe_name" class="form-label">Recipe Name</label>
-            <input type="text" class="form-control" id="recipe_name" name="recipe_name" required minlength="5" maxlength="50">
+            <input type="text" class="form-control" id="recipe_name" name="recipe_name" required minlength="5" maxlength="50" value="{{ recipe.recipe_name }}">
             </div>
         </div>        
         <!-- Time -->
         <div class="row">
             <div class="mb-3">
             <label for="time" class="form-label">Time</label>
-            <input type="text" class="form-control" id="time" name="time" required minlength="1" maxlength="3">
+            <input type="text" class="form-control" id="time" name="time" required minlength="1" maxlength="3" value="{{ recipe.time }}">
             </div>
         </div>
         <!-- Description -->
         <div class="row">
             <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" name="description" rows="3" required minlength="20"></textarea>
+            <textarea class="form-control" id="description" name="description" rows="3" required minlength="20">{{- recipe.description -}}</textarea>
             </div>
         </div>
         <!-- Ingredients -->
         <div class="row">
             <div class="mb-3">
             <label for="ingredients" class="form-label">Ingredients</label>
-            <textarea class="form-control" id="ingredients" name="ingredients" rows="3"></textarea>
+            <textarea class="form-control" id="ingredients" name="ingredients" rows="3">{{-  recipe.ingredients -}}</textarea>
             </div>
         </div>
         <!-- Directions -->
         <div class="row">
             <div class="mb-3">
             <label for="directions" class="form-label">Directions</label>
-            <textarea class="form-control" id="directions" name="directions" rows="3" required minlength="20"></textarea>
+            <textarea class="form-control" id="directions" name="directions" rows="3" required minlength="20">{{-  recipe.directions -}}</textarea>
             </div>
         </div>
         <!-- Nutritional Infrormation -->
         <div class="row">
             <div class="mb-3">
             <label for="nutritional_info" class="form-label">Nutritional Information</label>
-            <textarea class="form-control" id="nutritional_info" name="nutritional_info" rows="3" required minlength="20"></textarea>
+            <textarea class="form-control" id="nutritional_info" name="nutritional_info" rows="3" required minlength="20">{{-  recipe.nutritional_info -}}</textarea>
             </div>
         </div>
-        <!-- Submit Button -->        
+        <!-- Buttons -->        
         <div class="row">
             <div class="col s12 center-align">
+                <!-- Cancel Button -->
                 <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                    Edit Recipe <i class="fas fa-edit-square right"></i></button>
+                    <a href="{{ url_for('get_recipes') }}">Cancel</a><i class="fas fa-edit-square right"></i></button>
+                <!-- Submit Buttom -->
+                <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    <a href="{{ url_for('get_recipes') }}">Edit Recipe</a><i class="fas fa-edit-square right"></i></button>
             </div>
         </div>
     </form>

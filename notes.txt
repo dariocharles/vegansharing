@@ -1,8 +1,14 @@
+START WITH UPDATE THE TASK IN THE DATABASE VIDEO!!
+-https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/177f2f9ea9904567967ec72bdf01d4a0/
+
+
 Why everytimes i open is the env.py file gone?
 Why do I have to reinstall flask, flask_pymongo and dnspython everytime reopen
 
 
-
+Add
+-validation video?
+-time - add automatic minutes and make it have to be numbers
 
 
 # -------------------

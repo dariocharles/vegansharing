@@ -3,15 +3,24 @@
 
 <h1>My Recipes</h1>
 
-{% for recipe in recipes %}
-<div class="card" style="width: 18rem;">
-  <img src="{{ recipe.image }}" class="card-img-top" alt="Recipe Picture">
-  <div class="card-body">
-    <h5 class="card-title"><a href="{{ url_for('single_recipe', recipe_id=recipe._id ) }}">{{ recipe.recipe_name }}</a></h5>
-    <p class="card-text">{{ recipe.description }}</p>
-    <p><em>Created by: {{ recipe.created_by }}</em></p>
-  </div>
-</div>
-{% endfor %}
+{% if session.user|lower == recipes.created_by|lower %} 
+   {% for recipe in recipes %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{ recipe.image }}" class="card-img-top" alt="Recipe Picture">
+        <div class="card-body">
+            <h5 class="card-title"><a href="{{ url_for('single_recipe', recipe_id=recipe._id ) }}">{{ recipe.recipe_name }}</a></h5>
+            <strong>{{ recipe.category_name }}</strong>
+            <p class="card-text">{{ recipe.description }}</p>
+            <p><em>Created by: {{ recipe.created_by }}</em></p>
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+    <h1>You have not logged any recipes</h1>
+{% endif %}
+
+
+
+
 
 {% endblock %}

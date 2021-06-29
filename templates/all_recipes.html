@@ -9,6 +9,7 @@
   <img src="{{ recipe.image }}" class="card-img-top" alt="Recipe Picture">
   <div class="card-body">
     <h5 class="card-title"><a href="{{ url_for('single_recipe', recipe_id=recipe._id ) }}">{{ recipe.recipe_name }}</a></h5>
+    <strong>{{ recipe.category_name }}</strong>
     <p class="card-text">{{ recipe.description }}</p>
     <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     <p><em>Created by: {{ recipe.created_by }}</em></p>

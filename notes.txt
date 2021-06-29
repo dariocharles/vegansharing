@@ -9,35 +9,29 @@ Why do I have to reinstall flask, flask_pymongo and dnspython everytime reopen
 Add
 -validation video?
 -time - add automatic minutes and make it have to be numbers
-
-
-# -------------------
-# @app.route("/all_recipes/<recipe_name>")
-# def recipes_all(recipe_name):
-#     recipe = {
-#         "image": request.form.get("image"),
-#             "category_name": request.form.get("category_name"),
-#             "recipe_name": request.form.get("recipe_name"),
-#             "time": request.form.get("time"),
-#             "description": request.form.get("description"),
-#             "ingredients": request.form.get("ingredients"),
-#             "directions": request.form.get("directions"),
-#             "nutritional_info": request.form.get("nutritional_info"),
-#             "created_by": session["user"]
-#     }
-
-#     mongo.db.recipes.find()        
-#     return redirect(url_for("get_recipes"))
-
-#     recipes = mongo.db.categories.find().sort("recipes", 1)
-#     return render_template("all_recipes.html", recipe=recipes)
-
-
-<a href="/all_recipes/{{ recipe.recipes_all.url }}"></a> - for all_recipes recipe for URL link
+-Add recipe button on the my recipe page and add you have not logged any recipes messge if they have not
 
 
 
-----------------------------------
+
+
+{% for recipe in recipes %}
+    {% if session.user|lower == recipes.created_by|lower %} 
+        <div class="card" style="width: 18rem;">
+            <img src="{{ recipe.image }}" class="card-img-top" alt="Recipe Picture">
+            <div class="card-body">
+                <h5 class="card-title"><a href="{{ url_for('single_recipe', recipe_id=recipe._id ) }}">{{ recipe.recipe_name }}</a></h5>
+                <strong>{{ recipe.category_name }}</strong>
+                <p class="card-text">{{ recipe.description }}</p>
+                <p><em>Created by: {{ recipe.created_by }}</em></p>
+            </div>
+        </div>
+
+    {% else %}
+        <h1>You have not logged any recipes</h1>
+    {% endif %}
+{% endfor %}
+----------------
 
 git push origin HEAD:master --force
 

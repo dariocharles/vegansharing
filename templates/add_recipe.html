@@ -3,26 +3,26 @@
 
 <h2>Add Recipe</h2>
 
-<div class="card search-bar one-add-recipe">
+<div class="card one-add-recipe">
    
     <div class="list-group list-group-flush two-add-recipe">
-        <form class="container" method="POST" action="">
+        <form class="container" method="POST" action="/add_recipe" enctype="multipart/form-data">
             <div class="row">
             <!-- Image -->
-                <div class="mb-3">
-                <label for="formFile" class="form-label">Image</label>
-                <input class="form-control" type="file" id="formFile">
-                </div>
-            </div>
+            <label class="form-label" for="customFile">Browse Images</label>
+            <input type="file" class="form-control" id="image" name="image">
+            <!-- <button class="bblock" type="submit">Register<i class="fas fa-sign-in-alt ml-2"></i></button> -->
+            
+            
             <!-- Category -->
-            <div class="row">
+            <div class="row" class="bblock">
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="AB" disables selected>Choose Meal</option>
                         {% for category in categories %}
                         <option value="{{ category.category_name }}" required>{{ category.category_name }}</option>
                         {% endfor %}
                     </select>		
-                    <labrl for="category_name">Meal</labrl>
+                    <label for="category_name">Meal</labrl>
             </div>
             <!--  Recipe Name -->
             <div class="row">
@@ -39,28 +39,28 @@
                 </div>
             </div>
             <!-- Description -->
-            <div class="row">
+            <div class="width-add-recipe">
                 <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" id="description" name="description" rows="3" required minlength="20"></textarea>
                 </div>
             </div>
             <!-- Ingredients -->
-            <div class="row">
+            <div class="width-add-recipe">
                 <div class="mb-3">
                 <label for="ingredients" class="form-label">Ingredients</label>
                 <textarea class="form-control" id="ingredients" name="ingredients" rows="3"></textarea>
                 </div>
             </div>
             <!-- Directions -->
-            <div class="row">
+            <div class="width-add-recipe">
                 <div class="mb-3">
                 <label for="directions" class="form-label">Directions</label>
                 <textarea class="form-control" id="directions" name="directions" rows="3" required minlength="20"></textarea>
                 </div>
             </div>
             <!-- Nutritional Infrormation -->
-            <div class="row">
+            <div class="width-add-recipe">
                 <div class="mb-3">
                 <label for="nutritional_info" class="form-label">Nutritional Information</label>
                 <textarea class="form-control" id="nutritional_info" name="nutritional_info" rows="3" required minlength="20"></textarea>

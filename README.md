@@ -5,6 +5,8 @@ Planning/Organizing/ and Setting Up.
 Modal for delete button - https://getbootstrap.com/docs/4.0/components/modal/
 
 
+https://www.youtube.com/watch?v=6WruncSoCdI - for upload file
+
 Code
 Register Form - https://bootsnipp.com/snippets/or3WG
 

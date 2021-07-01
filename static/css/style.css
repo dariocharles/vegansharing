@@ -7,7 +7,15 @@ body {
       rgb(64, 207, 7), #ec8631
     );
 }
- /* CSS FORM FROM SOURCE */ */
+
+
+
+
+
+
+
+
+ /* CSS FORM FROM SOURCE */ 
 form {
   width: 60%;
   margin: 60px auto;
@@ -23,6 +31,8 @@ label {
   position: relative;
   margin: 40px 0px;
 }
+
+
 .label-txt {
   position: absolute;
   top: -1.6em;
@@ -40,6 +50,7 @@ label {
   border: none;
   outline: none;
 }
+
 
 .line-box {
   position: relative;
@@ -80,6 +91,7 @@ button, .button {
   transition: ease .3s;
 }
 
+
 button:hover, .button:hover {
   background: #8BC34A !important;
   color: #ffffff !important;
@@ -97,11 +109,6 @@ button:hover, .button:hover {
 .hor-center {
   text-align: center;
 }
-
-
-/* #footer {
-  height: 80px;
-} */
 
 #footer-container {
   padding-top: 28px;
@@ -149,12 +156,23 @@ h2, h1 {
   width: 50%;
 }
 
+/* Add recipe page */
 .one-add-recipe {
   width: 80%;
   background-color: white;
-  text-align: center;
+  margin: auto;
 }
 
 .two-add-recipe {
   width: 90%;
+  margin: auto;
+}
+
+.width-add-recipe {
+  width: 100%;
+}
+
+
+.bblock {
+  display: block;
 }

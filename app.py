@@ -8,12 +8,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-
 app = Flask(__name__)
+
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")
+app.config["IMAGE_UPLOADS"] = "/workspace/vegansharing/static/img"
+app.secret_key = os.environ.get("SECRET_KEY")                                                      
 
 mongo = PyMongo(app)
 
@@ -102,17 +103,13 @@ def logout():
     session.pop("user")
     # session.clear() or session.pop('user')
     return redirect(url_for("login"))
-    
-# @app.route("/add_recipe")
-# def add_recipe():
-#     categories = mongo.db.categories.find().sort("category_name", 1)
-#     return render_template("add_recipe.html", categories=categories)
+
+
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
         recipe = {
-            "image": request.form.get("image"),
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "time": request.form.get("time"),
@@ -122,12 +119,32 @@ def add_recipe():
             "nutritional_info": request.form.get("nutritional_info"),
             "created_by": session["user"]
         }
+
+        if request.files:
+            image = request.files["image"]
+            image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
+
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
-
+ 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
+
+
+# @app.route("/upload-image", methods=["GET", "POST"])
+# def upload_image():
+#     if request.method == "POST":
+
+#         if request.files:
+#             image = request.files["image"]
+#             image.save(os.path.join(app.config["IMAGE_UPLOADS"], image.filename))
+            
+
+#             print("Image Saved!")
+#             return redirect(request.url)
+    
+#     return render_template("template/add_recipe.html")
 
 # @app.route("/image", methods=["POST"])
 # def image():
@@ -136,6 +153,10 @@ def add_recipe():
 #         mongo.save_file(profile_image.filename, profile_image)
 #         mongo.db.usersinsert({'username' : request.form.get('username'), 'profile_image_name' : profile_image.filename})
 #     return "Done!"
+
+# @app.route("/upload-image")
+# def upload_image():
+#     return render_template('public/upload_image.html')
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
@@ -172,6 +193,7 @@ def single_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("single_recipe.html", recipe=recipe, categories=categories)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -18,11 +18,17 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# Get recipes?
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
     all_recipes = list(mongo.db.recipes.find())
+    return render_template("all_recipes.html", recipes=all_recipes)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    all_recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("all_recipes.html", recipes=all_recipes)
 
 
@@ -31,6 +37,8 @@ def get_recipes():
 def user_recipes():
     user_recipes = list(mongo.db.recipes.find())
     return render_template("user_recipes.html", recipes=user_recipes)
+
+
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -73,7 +81,7 @@ def login():
                         flash("Welcome, {}".format(
                             request.form.get("username")))
                         return redirect(url_for(
-                            "profile", username=session["user"]))
+                            "user_recipes", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -87,24 +95,11 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template("profile.html", username=username)
-
-    return redirect(url_for("login"))
-
-
 @app.route("/logout")
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
-    # session.clear()
     # session.clear() or session.pop('user')
     return redirect(url_for("login"))
     
@@ -117,7 +112,6 @@ def logout():
 def add_recipe():
     if request.method == "POST":
         recipe = {
-            # IMAGES
             "image": request.form.get("image"),
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
@@ -135,7 +129,14 @@ def add_recipe():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
-# ----------------
+# @app.route("/image", methods=["POST"])
+# def image():
+#     if "profile_image" in request.files:
+#         profile_image = request.files["profile_image"]
+#         mongo.save_file(profile_image.filename, profile_image)
+#         mongo.db.usersinsert({'username' : request.form.get('username'), 'profile_image_name' : profile_image.filename})
+#     return "Done!"
+
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -158,11 +159,12 @@ def edit_recipe(recipe_id):
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
+
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
-    return redirect(url_for("get_recipes"))
+    return redirect(url_for("user_recipes"))
     
 
 @app.route("/single_recipe/<recipe_id>", methods=["GET", "POST"])

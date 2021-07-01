@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Login</h3>
+    <h2>Login</h2>
 
     <!-- Taken From https://bootsnipp.com/snippets/or3WG -->
 
@@ -9,7 +9,7 @@
     <form method="POST" action="{{ url_for('login') }}">
 <!-- Username -->
   <label>
-    <p class="label-txt"><i class="fas fa-user-cog"></i>Username</p>
+    <p class="label-txt"><i class="fas fa-user-cog icon-space"></i>Username</p>
     <input id="username" name="username"  minlength="5"  maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" type="text" class="input" required>
     <div class="line-box">
       <div class="line"></div>
@@ -17,16 +17,16 @@
   </label>
 <!-- Password -->
   <label>
-    <p class="label-txt"><i class="fas fa-user-lock"></i>Password</p>
+    <p class="label-txt"><i class="fas fa-user-lock icon-space"></i>Password</p>
     <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="input" required>
     <div class="line-box">
       <div class="line"></div>
     </div>
 <!-- Register Button -->
   </label>
-  <button type="submit">Login<i class="fas fa-sign-in-alt"></i></button>
+  <button type="submit">Login<i class="fas fa-sign-in-alt ml-2"></i></button>
 <!-- Redirect To Register -->
-   <div class="row">
+   <div class="row below-button">
         <div class="col s12">
             <p class="center-align">
                 New here?

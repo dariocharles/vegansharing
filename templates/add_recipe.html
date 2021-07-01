@@ -1,80 +1,83 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Add Recipes</h3>
+<h2>Add Recipe</h2>
 
-
-<!-- Class="validate"? -->
-<div class="row">
-    <form class="container" method="POST" action="">
-        <div class="row">
-        <!-- Image -->
-            <div class="mb-3">
-            <label for="formFile" class="form-label">Image</label>
-            <input class="form-control" type="file" id="formFile">
+<div class="card search-bar one-add-recipe">
+   
+    <div class="list-group list-group-flush two-add-recipe">
+        <form class="container" method="POST" action="">
+            <div class="row">
+            <!-- Image -->
+                <div class="mb-3">
+                <label for="formFile" class="form-label">Image</label>
+                <input class="form-control" type="file" id="formFile">
+                </div>
             </div>
-        </div>
-        <!-- Category -->
-        <div class="row">
-                <select id="category_name" name="category_name" class="validate" required>
-                    <option value="AB" disables selected>Choose Meal</option>
-                    {% for category in categories %}
-                    <option value="{{ category.category_name }}" required>{{ category.category_name }}</option>
-                    {% endfor %}
-                </select>		
-                <labrl for="category_name">Meal</labrl>
-        </div>
-        <!--  Recipe Name -->
-        <div class="row">
-            <div class="mb-3">
-            <label for="recipe_name" class="form-label">Recipe Name</label>
-            <input type="text" class="form-control" id="recipe_name" name="recipe_name" required minlength="5" maxlength="50">
+            <!-- Category -->
+            <div class="row">
+                    <select id="category_name" name="category_name" class="validate" required>
+                        <option value="AB" disables selected>Choose Meal</option>
+                        {% for category in categories %}
+                        <option value="{{ category.category_name }}" required>{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select>		
+                    <labrl for="category_name">Meal</labrl>
             </div>
-        </div>        
-        <!-- Time -->
-        <div class="row">
-            <div class="mb-3">
-            <label for="time" class="form-label">Time</label>
-            <input type="text" class="form-control" id="time" name="time" required minlength="1" maxlength="3">
+            <!--  Recipe Name -->
+            <div class="row">
+                <div class="mb-3">
+                <label for="recipe_name" class="form-label">Recipe Name</label>
+                <input type="text" class="form-control" id="recipe_name" name="recipe_name" required minlength="5" maxlength="50">
+                </div>
+            </div>        
+            <!-- Time -->
+            <div class="row">
+                <div class="mb-3">
+                <label for="time" class="form-label">Time</label>
+                <input type="text" class="form-control" id="time" name="time" required minlength="1" maxlength="3">
+                </div>
             </div>
-        </div>
-        <!-- Description -->
-        <div class="row">
-            <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" name="description" rows="3" required minlength="20"></textarea>
+            <!-- Description -->
+            <div class="row">
+                <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required minlength="20"></textarea>
+                </div>
             </div>
-        </div>
-        <!-- Ingredients -->
-        <div class="row">
-            <div class="mb-3">
-            <label for="ingredients" class="form-label">Ingredients</label>
-            <textarea class="form-control" id="ingredients" name="ingredients" rows="3"></textarea>
+            <!-- Ingredients -->
+            <div class="row">
+                <div class="mb-3">
+                <label for="ingredients" class="form-label">Ingredients</label>
+                <textarea class="form-control" id="ingredients" name="ingredients" rows="3"></textarea>
+                </div>
             </div>
-        </div>
-        <!-- Directions -->
-        <div class="row">
-            <div class="mb-3">
-            <label for="directions" class="form-label">Directions</label>
-            <textarea class="form-control" id="directions" name="directions" rows="3" required minlength="20"></textarea>
+            <!-- Directions -->
+            <div class="row">
+                <div class="mb-3">
+                <label for="directions" class="form-label">Directions</label>
+                <textarea class="form-control" id="directions" name="directions" rows="3" required minlength="20"></textarea>
+                </div>
             </div>
-        </div>
-        <!-- Nutritional Infrormation -->
-        <div class="row">
-            <div class="mb-3">
-            <label for="nutritional_info" class="form-label">Nutritional Information</label>
-            <textarea class="form-control" id="nutritional_info" name="nutritional_info" rows="3" required minlength="20"></textarea>
+            <!-- Nutritional Infrormation -->
+            <div class="row">
+                <div class="mb-3">
+                <label for="nutritional_info" class="form-label">Nutritional Information</label>
+                <textarea class="form-control" id="nutritional_info" name="nutritional_info" rows="3" required minlength="20"></textarea>
+                </div>
             </div>
-        </div>
-        <!-- Submit Button -->        
-        <div class="row">
-            <div class="col s12 center-align">
-                <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                    Add Recipes <i class="fas fa-plus-square right"></i></button>
+            <!-- Submit Button -->        
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                        Add Recipes <i class="fas fa-plus-square right"></i></button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
+    </div>
 </div>
+
 
 
 {% endblock %}

@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope&family=Roboto&display=swap');
 
 body {
-    background-color: red;
+  background-image:
+    linear-gradient(
+      to right, 
+      rgb(64, 207, 7), #ec8631
+    );
 }
-
-body {
-  background: #C5E1A5;
-}
+ /* CSS FORM FROM SOURCE */ */
 form {
   width: 60%;
   margin: 60px auto;
@@ -16,6 +17,7 @@ form {
   -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
+
 label {
   display: block;
   position: relative;
@@ -65,12 +67,12 @@ label {
   top: -3em;
 }
 
-button {
+button, .button {
   display: inline-block;
   padding: 12px 24px;
-  background: rgb(220,220,220);
+  background: rgb(220,220,220) !important;
   font-weight: bold;
-  color: rgb(120,120,120);
+  color: rgb(120,120,120) !important;
   border: none;
   outline: none;
   border-radius: 3px;
@@ -78,11 +80,81 @@ button {
   transition: ease .3s;
 }
 
-button:hover {
-  background: #8BC34A;
-  color: #ffffff;
+button:hover, .button:hover {
+  background: #8BC34A !important;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+/* ---------------------------------------------- */
+.button-anchor {
+  text-decoration: none;
+}
+
+.mb-button {
+  margin-bottom: 2px;
+}
+
+.hor-center {
+  text-align: center;
 }
 
 
+/* #footer {
+  height: 80px;
+} */
 
+#footer-container {
+  padding-top: 28px;
+}
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;   
+}
+
+h2, h1 {
+  text-align: center;
+  margin-top: 40px;
+  color: rgba(255, 255, 255, 0.733);
+}
+
+.text-coloring {
+  color: rgb(136, 132, 132) !important;
+}
+
+.icon-space {
+  margin-right: 7px;
+}
+
+.below-button {
+  margin-top: 10px;
+}
+
+.search-bar {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: auto;
+  margin-top: 50px;
+  width: 50%;
+}
+
+.one-add-recipe {
+  width: 80%;
+  background-color: white;
+  text-align: center;
+}
+
+.two-add-recipe {
+  width: 90%;
+}

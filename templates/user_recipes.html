@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>My Recipes</h1>
-
-
+<h1>Here Are Your Recipes</h1>
 
 {% for recipe in recipes %}
     {% if session.user|lower == recipe.created_by|lower %} 
@@ -18,6 +16,14 @@
     </div>
     {% endif %}
 {% endfor %}
+
+<div class="container-fluid hor-center">
+    <a href="{{ url_for('add_recipe') }}" class="button button-anchor">Show All 
+    Recipes</a>
+</div>
+
+
+
 
 
 

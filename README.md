@@ -2,6 +2,9 @@
 Planning/Organizing/ and Setting Up. 
 
 
+Modal for delete button - https://getbootstrap.com/docs/4.0/components/modal/
+
+
 Code
 Register Form - https://bootsnipp.com/snippets/or3WG
 

@@ -1,107 +1,8 @@
-
-Planning/Organizing/ and Setting Up. 
-
-
-Modal for delete button - https://getbootstrap.com/docs/4.0/components/modal/
-
-
-https://www.youtube.com/watch?v=6WruncSoCdI - for upload file
-
-Code
-Register Form - https://bootsnipp.com/snippets/or3WG
-
-
-
-https://getbootstrap.com/docs/5.0/components/card/ - for the cards for recipes
-
-Er diagram
-Site Map
-WireFrame
-
--database frontend backend
--CRUD
-
-Home page and add form wireframe
-
-
-Planning Day:
-o	Finalize application idea and have a clear user and site owner goal.
-o	List of features to include.
-o	Wireframe
-o	Sitemap
-o	ER Diagram
-
-
-
-Goals
--External user’s goal:
-Find and share recipes, comments so are able to see reviews of the recipe
-Site owner's goal:
-Promote a brand of cooking tools./Build a community (when big enough can monetize)
-
-
-(Potential features to include:
-Create a web application that allows users to store and easily access cooking recipes. Recipes would include fields such as ingredients, preparation steps, required tools, cuisine, etc.
-Create the backend code and frontend form(s) to allow users to add new recipes to the site, edit them and delete them.
-Create the backend and frontend functionality for users to locate recipes based on the recipe's fields. You may choose to create a full search functionality, or just a directory of recipes.
-Provide results in a manner that is visually appealing and user friendly.
-Advanced potential feature (nice-to-have)
-Build upon the required tools field to promote your brand of kitchen tools (e.g. oven, pressure cooker, etc…).
-Create a dashboard to provide some statistics about all the recipes.
-)
-README -
-Main Technologies
-HTML, CSS, JavaScript, Python+Flask, MongoDB
-Additional libraries and external APIs
-Mandatory Requirements
-A project violating any of these requirements will FAIL
-1.	Data handling: Build a MongoDB-backed Flask project for a web application that allows users to store and manipulate data records about a particular domain. If you are considering using a different database, please discuss that with your mentor first and inform Student Care.
-2.	Database structure: Put some effort into designing a database structure well-suited for your domain. Make sure to put some thought into the nesting relationships between records of different entities.
-3.	User functionality: Create functionality for users to create, locate, display, edit and delete records (CRUD functionality).
-4.	Use of technologies: Use HTML and custom CSS for the website's front-end.
-5.	Structure: Incorporate a main navigation menu and structured layout (you might want to use Materialize or Bootstrap to accomplish this).
-6.	Documentation: Write a README.md file for your project that explains what the project does and the value that it provides to its users.
-7.	Version control: Use Git & GitHub for version control.
-8.	Attribution: Maintain clear separation between code written by you and code from external sources (e.g. libraries or tutorials). Attribute any code from external sources to its source via comments above the code and (for larger dependencies) in the README.
-9.	Deployment: Deploy the final version of your code to a hosting platform such as Heroku.
-10.	Make sure to not include any passwords or secret keys in the project repository.
-
-
-
-
-
-
-Features
--CRUD - Create functionality for users to create, locate, display, edit and delete records (CRUD functionality). - Are you sure you want to delete this - defensive
-
--login/logout accounts editing only what posted as well as admin editing
--Comments
--Make account
-
-Extra
--API
--search functionality?
--page that just has the recipes the user contributed – user profile
--dashboard with statistic of each recipe
--forum
-
-Name
-Time
-Date submitted
-Who submitted
-Ingredients
-Directions
-Nutritional Facts
-
-
-
-
-
 # <div align="center">Flask Framework</div>
 
-[Live Project Here](https://mountain-flask-app.herokuapp.com/)
+[Live Project Here](https://vegan-sharing-app.herokuapp.com/)
 
-This project used the Flask Framework and Startbootstrap template to advertise a hotel in Canmore, AB. It is a three page website that uses a JSON file to retrieve data from to advertise each type of room available. 
+In this project, I used Flask and MongoDB to build a website that people can share their vegan recipes. The website contains login, logout and CRUD functionality. 
 
 ![Screenshot](static/assets/img/evermore.png)
 
@@ -109,24 +10,29 @@ This project used the Flask Framework and Startbootstrap template to advertise a
 
 1. [Goals](#goals)
 2. [User Experience](#UX)
-3. [Testing](#testing)
-4. [Deployment](#deployment)
-5. [Credits](#credits)
+3. [Extra Features](#extra) 
+4. [Technologies](#technology)
+5. [Deployment](#deployment)
+6. [Credits](#credits)
 
 ## Goals <a name="goals"></a>
 
 ### User Goals
 
-The user's goal is to learn more about the hotel and contact them for bookings. When they come to the website they will find that they can see which rooms are available. 
+To find and share vegan recipes with a community.
 
+### Website Goals
+
+ To build a community and reach a point where big enough to monetize off afiliate marketing and ad revenue. 
+ 
 ### Developer Goals
 
-In this project, I implemented a Startbootstrap template, Python3 language for streamline code, and Flask framework to build the web application. I also deployed the project to Github and Heroku. 
+To store and access data from MongoDB. To use Flask in order to build the website functionality.
 
 In this web application I showcased my abilities in the following:
 
 - Flask Framework
-- Bootstrap Template
+- MongoDB
 - Jinja syntax
 - Python3
 - CSS3
@@ -143,6 +49,17 @@ When the user comes to this website, they are greeted with an inviting feel and 
 - Style
   - The style of the website is professional and information focused. 
 
+## Extra Features <a name="extra"></a>
+
+If I were to continue working on this project I would add the following:
+
+- Upload and Display Images for each recipe
+- API to generate recipes
+- abilitiy for users to comment on recipes
+- forum to discuss recipes and cooking
+- Validation on forms
+- Contact Page
+
 ## Technologies Used <a name="technologies"></a>
 
 ### Languages Used
@@ -150,6 +67,8 @@ When the user comes to this website, they are greeted with an inviting feel and 
 - HTML5
 - CSS3
 - Python3
+- Flask
+- MongoDB
 
 ### Frameworks, Libraries & Programs Used
 
@@ -161,17 +80,8 @@ When the user comes to this website, they are greeted with an inviting feel and 
 
 4. [Heroku](heroku.com)
 
-## Testing <a name="testing"></a>
+5. [Font Awesome](https://fontawesome.com/)
 
-### Further Testing
-
-- The Website was tested on Google Chrome, and Micrsoft Edge.
-- The website was viewed on a Laptop device.
-- Used Chrome Dev Tools to test responsiveness.
-- Multiple games were played to ensure that the functions all worked with any interaction the user may use.
-- I used [W3C Markup Validation](https://validator.w3.org/) to validate HTML
-- I used [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to validate CSS.
-- I used [JSON Lint](jsonlint.com)) to validate the JSON file.
 
 ## Deployment <a name="deployment"></a>
 
@@ -193,10 +103,7 @@ The project was deployed to Herokku using the following steps...
 ### Resources/References
 
 - [The Code Institute](https://codeinstitute.net/)
-
-### Images
-
-- All images were taken from Google images.
+- [Bootstrap](https://getbootstrap.com/)
 
 ### Acknowledgements
 

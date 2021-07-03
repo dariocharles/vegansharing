@@ -4,25 +4,17 @@
 <h2>Add Recipe</h2>
 
 <div class="card one-add-recipe">
-   
     <div class="list-group list-group-flush two-add-recipe">
-        <form class="container" method="POST" action="/add_recipe" enctype="multipart/form-data">
-            <div class="row">
-            <!-- Image -->
-            <label class="form-label" for="customFile">Browse Images</label>
-            <input type="file" class="form-control" id="image" name="image">
-            <!-- <button class="bblock" type="submit">Register<i class="fas fa-sign-in-alt ml-2"></i></button> -->
-            
-            
+        <form class="container" method="POST" action="/add_recipe" enctype="multipart/form-data">                     
             <!-- Category -->
             <div class="row" class="bblock">
-                    <select id="category_name" name="category_name" class="validate" required>
-                        <option value="AB" disables selected>Choose Meal</option>
-                        {% for category in categories %}
-                        <option value="{{ category.category_name }}" required>{{ category.category_name }}</option>
-                        {% endfor %}
-                    </select>		
-                    <label for="category_name">Meal</labrl>
+                <label for="category_name">Meal</label>    
+                <select id="category_name" name="category_name" required class="ml-4">
+                    <option disables selected>Choose Meal</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category_name }}" required>{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>		      
             </div>
             <!--  Recipe Name -->
             <div class="row">
@@ -74,7 +66,6 @@
                 </div>
             </div>
         </form>
-    </div>
     </div>
 </div>
 

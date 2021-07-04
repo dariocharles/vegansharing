@@ -4,16 +4,13 @@
 
 In this project, I used Flask and MongoDB to build a website that people can share their vegan recipes. The website contains login, logout and CRUD functionality. 
 
-![Screenshot](static/assets/img/evermore.png)
-
 # Table of contents
 
 1. [Goals](#goals)
-2. [User Experience](#UX)
-3. [Extra Features](#extra) 
-4. [Technologies](#technology)
-5. [Deployment](#deployment)
-6. [Credits](#credits)
+2. [Extra Features](#extra) 
+3. [Technologies](#technology)
+4. [Deployment](#deployment)
+5. [Credits](#credits)
 
 ## Goals <a name="goals"></a>
 
@@ -37,17 +34,6 @@ In this web application I showcased my abilities in the following:
 - Python3
 - CSS3
 - HTML5
-
-## User Experience UX <a name="UX"></a>
-
-When the user comes to this website, they are greeted with an inviting feel and visually inticing experience. The imagry and design is sleek and relavent to the hotel giving the user a clear understanding of what they are seeking. When they submit the contact form they are provided feedback that their form is submitted and they will be replied to shortly. 
-
-### Design
-
-- Colour Scheme
-  - This website is quite colourful and welcoming. The white background reflects the rich, clean mountain air that the hotel promotes. 
-- Style
-  - The style of the website is professional and information focused. 
 
 ## Extra Features <a name="extra"></a>
 

@@ -168,14 +168,11 @@ h2, h1 {
 
 .bblock {
   display: block;
+  margin: auto;
 }
 
 .aligning {
   margin: auto;
 }
 
-/* .recipe-cards {
-  margin: 10px;
-  width: 33%;
-  display: inline-block;
-} */
+

@@ -4,12 +4,12 @@
 <h2>Add Recipe</h2>
 
 <div class="card one-add-recipe">
-    <div class="list-group list-group-flush two-add-recipe">
-        <form class="container" method="POST" action="/add_recipe" enctype="multipart/form-data">                     
+    <div class="list-group list-group-flush two-add-recipe" style="padding-bottom: 30px;">
+        <form class="container pb-4" method="POST" action="/add_recipe" enctype="multipart/form-data">                     
             <!-- Category -->
-            <div class="row" class="bblock">
+            <div class="bblock">
                 <label for="category_name">Meal</label>    
-                <select id="category_name" name="category_name" required class="ml-4">
+                <select id="category_name" name="category_name" required>
                     <option disables selected>Choose Meal</option>
                     {% for category in categories %}
                     <option value="{{ category.category_name }}" required>{{ category.category_name }}</option>
@@ -17,14 +17,14 @@
                 </select>		      
             </div>
             <!--  Recipe Name -->
-            <div class="row">
+            <div>
                 <div class="mb-3">
                 <label for="recipe_name" class="form-label">Recipe Name</label>
                 <input type="text" class="form-control" id="recipe_name" name="recipe_name" required minlength="5" maxlength="50">
                 </div>
             </div>        
             <!-- Time -->
-            <div class="row">
+            <div>
                 <div class="mb-3">
                 <label for="time" class="form-label">Time</label>
                 <input type="text" class="form-control" id="time" name="time" required minlength="1" maxlength="3">

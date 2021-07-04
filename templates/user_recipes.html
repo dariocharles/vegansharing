@@ -5,21 +5,18 @@
 
 {% for recipe in recipes %}
     {% if session.user|lower == recipe.created_by|lower %} 
-    <div class="card" style="width: 18rem;">
-    <img src="{{ recipe.image }}" class="card-img-top" alt="Recipe Picture">
-    <div class="card-body">
-        <h5 class="card-title"><a href="{{ url_for('single_recipe', recipe_id=recipe._id ) }}">{{ recipe.recipe_name }}</a></h5>
-        <strong>{{ recipe.category_name }}</strong>
-        <p class="card-text">{{ recipe.description }}</p>
-        <p><em>Created by: {{ recipe.created_by }}</em></p>
-    </div>
+    <div class="card col-sm media" style="width: 31%; display: inline-block; text-align: center; min-height: 150px; margin: 1%;">
+        <div class="card-body" style="width: 100%; padding: 0;">
+            <h5 class="card-title"><a href="{{ url_for('single_recipe', recipe_id=recipe._id ) }}">{{ recipe.recipe_name }}</a></h5>
+            <strong>{{ recipe.category_name }}</strong>
+            <p><em>Created by: {{ recipe.created_by }}</em></p>
+        </div>
     </div>
     {% endif %}
 {% endfor %}
 
 <div class="container-fluid hor-center">
-    <a href="{{ url_for('add_recipe') }}" class="button button-anchor">Show All 
-    Recipes</a>
+    <a href="{{ url_for('add_recipe') }}" class="button button-anchor">Add Recipe</a>
 </div>
 
 {% endblock %}
